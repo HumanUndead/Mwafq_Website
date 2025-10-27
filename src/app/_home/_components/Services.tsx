@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./services.css";
 import Image from "next/image";
-import ServiceCard from '@/components/ui/Card';
+import ServiceCard from "@/components/ui/Card";
 import health1 from "@images/Home/health1.png";
 import health2 from "@images/Home/health2.png";
 import health3 from "@images/Home/health3.png";
@@ -21,30 +21,35 @@ const Services = () => {
       title: "Iqama Examination",
       description:
         "Streamlined and hassle-free Iqama medical examinations for your employees",
+      link: "/services/service-details/1",
     },
     {
       src: health2,
       title: "Baladiya Examination",
       description:
         "Quick, reliable, and fully compliant Baladiya examinations for your employees",
+      link: "/services/service-details/2",
     },
     {
       src: health3,
       title: "Pre-Employment Test",
       description:
         "Fast and accurate pre-employment medical tests to ensure your candidates are ready for work",
+      link: "/services/service-details/3",
     },
     {
       src: health3,
       title: "Pre-Employment Test",
       description:
         "Fast and accurate pre-employment medical tests to ensure your candidates are ready for work",
+      link: "/services/service-details/4",
     },
     {
       src: health3,
       title: "Pre-Employment Test",
       description:
         "Fast and accurate pre-employment medical tests to ensure your candidates are ready for work",
+      link: "/services/service-details/5",
     },
   ];
 
@@ -98,6 +103,7 @@ const Services = () => {
                 title={service.title}
                 description={service.description}
                 image={service.src}
+                link={service.link}
               />
             </SwiperSlide>
           ))}

@@ -10,6 +10,7 @@ step of the way."
       description1="Our team will get back to you
 as soon as possible."
       image={contact}
+      sizeImg="object-contain"
     />
   );
 }

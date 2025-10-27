@@ -23,7 +23,6 @@ const Benefits = () => {
       benefits={benefitsList}
       image={benefits}
       buttonText="More About Us"
-      // onButtonClick={() => console.log("More About Us clicked")}
     />
   );
 };

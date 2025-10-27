@@ -13,6 +13,7 @@ interface CustomIntroProps {
   image: string | any;
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
+  sizeImg?: string;
 }
 
 const CustomIntro = ({
@@ -26,6 +27,7 @@ const CustomIntro = ({
   image,
   onPrimaryClick,
   onSecondaryClick,
+  sizeImg = "object-cover",
 }: CustomIntroProps) => {
   return (
     <section className="container_main grid md:grid-cols-2 gap-12 items-center">
@@ -79,7 +81,7 @@ const CustomIntro = ({
               src={image}
               alt={title || "Hero Image"}
               fill
-              className="rounded-xl object-contain"
+              className={`rounded-xl  ${sizeImg}`}
             />
           </div>
         </div>

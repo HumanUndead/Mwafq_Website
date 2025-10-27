@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 const Contact = () => {
   return (
     <section className="container_main ">
-      <div className="bg-gradient-to-r from-cyan-400 to-blue-500 rounded-3xl p-12 text-white">
+      <div className="bg-gradient-to-r from-cyan-400 to-blue-500 rounded-3xl p-5 md:p-12 text-white">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h2>
@@ -22,7 +22,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold mb-1">Email</p>
-                  <p className="text-sm text-white/90">info@mwafq.com</p>
+                  <p className="text-sm text-white/90">Info@mwafq.com</p>
                 </div>
               </div>
 
@@ -32,7 +32,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold mb-1">Phone</p>
-                  <p className="text-sm text-white/90">+966 XX XXX XXXX</p>
+                  <p className="text-sm text-white/90">00966 555 98 30 70</p>
                 </div>
               </div>
 

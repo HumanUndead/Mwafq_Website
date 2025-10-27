@@ -5,18 +5,20 @@ import {
   Mail,
   Facebook,
   Instagram,
-  Youtube,
+  Linkedin,
   Twitter,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@images/Footer/logo_white.png";
+import ken from "@images/Footer/ken.png";
+
 const Footer = () => {
   const links = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "Services", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact-us" },
+    { name: "Services", href: "/services" },
   ];
 
   const services = [
@@ -30,14 +32,18 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, href: "#", name: "Facebook" },
     { icon: <Instagram className="w-5 h-5" />, href: "#", name: "Instagram" },
-    { icon: <Youtube className="w-5 h-5" />, href: "#", name: "Youtube" },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/posts/mwafq-%D9%85%D9%88%D9%81%D9%82_activity-7366437608064696320-Bvl7?utm_source=share&utm_medium=member_android&rcm=ACoAABxKYgMBDsuWSr6ylGMMrNRSxmvVQhpP6TQ",
+      name: "LinkedIn",
+    },
     { icon: <Twitter className="w-5 h-5" />, href: "#", name: "Twitter" },
   ];
 
   return (
-    <footer className="bg-[#1E2364]  text-white">
-      <div className="container_main ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[#1E2364] text-white w-full">
+      <div className="container_main py-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Logo and Links Column */}
           <div>
             <h3 className="text-lg font-semibold mb-6">Link</h3>
@@ -53,21 +59,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-
-            {/* Logo */}
-            <div className="mt-8">
-              <div className="">
-                <Link className="flex flex-col items-start -ml-10" href="/">
-                  <Image
-                    src={logo}
-                    alt="Mwafq Logo"
-                    width={130}
-                    height={50}
-                    className="object-contain"
-                  />
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Services Column */}
@@ -105,7 +96,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-gray-300 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-sm mb-1">Phone:</p>
-                  <p className="text-gray-300 text-sm">+966-XXX-XXXX</p>
+                  <p className="text-gray-300 text-sm">00966 555 98 30 70</p>
                 </div>
               </div>
 
@@ -114,7 +105,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-gray-300 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-sm mb-1">Email:</p>
-                  <p className="text-gray-300 text-sm">info@mwafq.com</p>
+                  <p className="text-gray-300 text-sm">Info@mwafq.com</p>
                 </div>
               </div>
             </div>
@@ -122,26 +113,54 @@ const Footer = () => {
 
           {/* Social Media Column */}
           <div>
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col justify-center items-center">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-cyan-500 transition-all duration-300 hover:scale-110"
                   aria-label={social.name}
+                  target="_blank"
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
           </div>
+          <div className="mt-8">
+            <div className="">
+              <Link className="flex flex-col items-start  w-full" href="/">
+                <Image
+                  src={logo}
+                  alt="Mwafq Logo"
+                  width={200}
+                  height={200}
+                  className="object-contain"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="border-t border-white/10 mt-12 pt-6 text-center">
-          <p className="text-gray-400 text-sm">
-            Copyright © 2025 Mwafq. All Rights Reserved.
-          </p>
+      <div className="w-full border-t border-white/10">
+        <div className="container_main py-6">
+          <a
+            href="https://kensoftware.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
+            title="Kensoftware Web Design & Development Company - Amman, Jordan"
+          >
+            <p className="text-gray-400 text-sm">Powered BY</p>
+            <Image
+              src={ken}
+              alt="Ken Software Solutions"
+              width={130}
+              height={100}
+              className="object-contain"
+            />
+          </a>
         </div>
       </div>
     </footer>

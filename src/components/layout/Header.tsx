@@ -45,7 +45,6 @@ function Header() {
               className="text-gray-800 hover:text-[#00A8F1] font-medium text-base flex items-center gap-1"
             >
               Services
-              <ChevronDown className="w-4 h-4" />
             </Link>
           </li>
           <li>

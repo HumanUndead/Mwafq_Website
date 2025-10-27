@@ -8,6 +8,7 @@ function Services() {
       subtitle="Smart Healthcare Solutions, All in One Platform"
       description1="Supporting line: Discover our range of services designed to simplify employee medical examinations and ensure reliable results"
       image={service}
+      sizeImg="object-contain"
     />
   );
 }

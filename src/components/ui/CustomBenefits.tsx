@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import React from "react";
+import Button from "./Button";
 
 interface BenefitItem {
   text: string;
@@ -22,8 +23,22 @@ const CustomBenefits: React.FC<CustomBenefitsSectionProps> = ({
   return (
     <section className="container_main">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Text Section */}
-        <div className="space-y-8">
+        {/* Image Section - Shows first on mobile, second on desktop */}
+        <div className="relative order-1 lg:order-2">
+          <div className="rounded-3xl text-white">
+            <div className="aspect-square flex items-center justify-center relative overflow-hidden rounded-2xl">
+              <Image
+                src={image}
+                alt="benefits image"
+                fill
+                className="object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Text Section - Shows second on mobile, first on desktop */}
+        <div className="space-y-8 order-2 lg:order-1">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex gap-4 items-start">
               <div className="flex-shrink-0 mt-1">
@@ -37,28 +52,11 @@ const CustomBenefits: React.FC<CustomBenefitsSectionProps> = ({
 
           {buttonText && (
             <div className="pt-4">
-              <button
-                onClick={onButtonClick}
-                className="px-8 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-cyan-500 hover:text-cyan-500 transition-all duration-300"
-              >
+              <Button variant="primary" onClick={onButtonClick}>
                 {buttonText}
-              </button>
+              </Button>
             </div>
           )}
-        </div>
-
-        {/* Image Section */}
-        <div className="relative">
-          <div className={` rounded-3xl p-12 text-white`}>
-            <div className="aspect-square flex items-center justify-center relative overflow-hidden rounded-2xl">
-              <Image
-                src={image}
-                alt="benefits image"
-                fill
-                className="object-cover rounded-2xl"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
